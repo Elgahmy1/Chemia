@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BS Chemistry Club | Bani-Sweif STEM High School</title>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <a href="#home" class="logo">BS Chemistry Club</a>
+            <button class="nav-toggle" onclick="toggleNav()">☰</button>
+            <nav class="nav" id="nav">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#programs">Competitions</a>
+                <a href="#research">Activities</a>
+                <a href="#news">Achievements</a>
+                <a href="#contact">Contact</a>
+                <a href="#" class="admin-btn" onclick="showAdminLogin()">Admin</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Welcome to the BS Chemistry Club!</h1>
+            <p>Uniting young scientists with a passion for chemistry, innovation, and impact. Join us as we explore chemical reactions, prepare for international competitions, and promote STEM in our community.</p>
+            <a href="#research" class="cta-button">Explore Our Programs</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <h2 class="section-title fade-in">About us</h2>
+            <p class="section-subtitle fade-in">We are a student-led club dedicated to academic excellence, experimentation, and community engagement.</p>
+            
+            <div class="about-grid">
+                <div class="about-text fade-in">
+                    <h3>Our Mission</h3>
+                    <p>To inspire, educate, and empower students through hands-on chemistry, Olympiad training, STEM outreach, and creative science communication.</p>
+                    <h3>Our Vision</h3>
+                    <p>Building a future generation of chemists and innovators ready to make a global impact.</p>
+                </div>
+                <div class="about-image fade-in">
+                    <img src="https://i.postimg.cc/5tbnfbnR/Whats-App-Image-2025-06-03-at-23-21-28-6dbc2a44.jpg" alt="Chemistry Laboratory" style="width: 50vw; aspect-ratio: 1/1;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section class="section programs" id="programs">
+        <div class="container">
+            <h2 class="section-title fade-in">Competitions</h2>
+            <p class="section-subtitle fade-in">Discover our comprehensive range of programs and competitions.</p>
+            
+            <div class="programs-grid" id="programs-container">
+                <!-- Programs will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Section -->
+    <section class="section research" id="research">
+        <div class="container">
+            <h2 class="section-title fade-in">Activities & Programs</h2>
+            <p class="section-subtitle fade-in">Learn and discover with us in all of chemistry fields</p>
+            
+            <div class="research-grid">
+                <div class="research-item fade-in">
+                    <div class="research-icon">🧪</div>
+                    <h3>Mentoring Committee</h3>
+                    <p>Weekly sessions on problem-solving, theory reviews, and mock tests using Zumdahl Chemistry</p>
+                </div>
+                <div class="research-item fade-in">
+                    <div class="research-icon">🔬</div>
+                    <h3>Facilitation Committee</h3>
+                    <p>Weekly sessions on STEM curriculum for grade 10 & 11 students.</p>
+                </div>
+                <div class="research-item fade-in">
+                    <div class="research-icon">⚛️</div>
+                    <h3>Science Outreach Program</h3>
+                    <p>Free chemistry demonstrations and mini-workshops at local schools to make science accessible.</p>
+                </div>
+                <div class="research-item fade-in">
+                    <div class="research-icon">🌱</div>
+                    <h3>Research & Innovation</h3>
+                    <p>Students work on real-world chemistry-based prototypes like green chemistry.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section class="section news" id="news">
+        <div class="container">
+            <h2 class="section-title fade-in">Achievements & Events</h2>
+            
+            <div class="news-grid" id="achievements-container">
+                <!-- Achievements will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Admin Panel -->
+    <div class="container">
+        <div class="admin-panel" id="admin-panel">
+            <div class="admin-actions">
+                <h2>Admin Panel</h2>
+                <button class="btn btn-secondary" onclick="logout()">Logout</button>
+            </div>
+            
+            <div class="admin-tabs">
+                <div class="admin-tab active" onclick="showTab('programs')">Programs</div>
+                <div class="admin-tab" onclick="showTab('achievements')">Achievements</div>
+                <div class="admin-tab" onclick="showTab('administrators')">Administrators</div>
+            </div>
+
+            <!-- Programs Tab -->
+            <div class="tab-content active" id="programs-tab">
+                <div class="admin-actions">
+                    <h3>Manage Competitions</h3>
+                    <button class="btn btn-success" onclick="showAddProgramForm()">Add Competition</button>
+                </div>
+                <div class="content-list" id="admin-programs-list">
+                    <!-- Programs will be loaded here -->
+                </div>
+            </div>
+
+            <!-- Achievements Tab -->
+            <div class="tab-content" id="achievements-tab">
+                <div class="admin-actions">
+                    <h3>Manage Achievements</h3>
+                    <button class="btn btn-success" onclick="showAddAchievementForm()">Add Achievement</button>
+                </div>
+                <div class="content-list" id="admin-achievements-list">
+                    <!-- Achievements will be loaded here -->
+                </div>
+            </div>
+
+            <!-- Administrators Tab -->
+            <div class="tab-content" id="administrators-tab">
+                <div class="admin-actions">
+                    <h3>Manage Administrators</h3>
+                    <button class="btn btn-success" onclick="showAddAdminForm()">Add Administrator</button>
+                </div>
+                <div class="content-list" id="admin-administrators-list">
+                    <!-- Administrators will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact Information</h3>
+                    <ul>
+                        <li>BS Chemistry Club</li>
+                        <li>Bani-Sweif STEM High School</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#about">About us</a></li>
+                        <li><a href="#programs">Competitions</a></li>
+                        <li><a href="#research">Activities</a></li>
+                        <li><a href="#news">Achievements</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="https://drive.google.com/drive/folders/1MhImGyS_wpDH0EfcXbj71jMxEP8R0vJ9?usp=drive_link">Our Google Drive</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Links</h3>
+                    <ul>
+                        <li><a href="https://chat.whatsapp.com/KFUIn2BCSXlJdPHUMqr8ft">WhatsApp</a></li>
+                        <li><a href="https://www.linkedin.com/in/bs-chemistry-club-4ab69036a">LinkedIn</a></li>
+                        <li><a href="https://youtube.com/@bs_chemitry_club?si=ufwYnXFBc6IWJ21h">YouTube</a></li>
+                        <li><a href="https://www.facebook.com/BS.Chemistry.Club?locale=ar_AR">Facebook</a></li>
+                        <li><a href="https://www.instagram.com/bs_chemistry_club?utm_source=ig_web_button_share_sheet&igsh=anEydWp4YWFidjE2">Instagram</a></li>
+                        <li><a href="https://discord.gg/3FKPYDkK">Discord</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 BS Chemistry club. All rights reserved.</p>
+                <button class="team-btn" onclick="showAdministrators()">👥 Our Team</button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div class="modal" id="login-modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('login-modal')">&times;</span>
+            <div class="modal-header">
+                <h2>Administrator Login</h2>
+                <p>Enter your credentials to access the admin panel</p>
+            </div>
+            <form class="login-form" onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" class="btn">Login</button>
+                <div id="login-error" class="error-message" style="display: none;"></div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Administrators Modal -->
+    <div class="modal" id="administrators-modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('administrators-modal')">&times;</span>
+            <div class="modal-header">
+                <h2>BS Chemistry Club Administrators</h2>
+                <p>Meet our dedicated team leading the club</p>
+            </div>
+            <div class="admin-grid" id="administrators-grid">
+                <!-- Administrators will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Content Form Modal -->
+    <div class="modal" id="content-modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('content-modal')">&times;</span>
+            <div class="modal-header">
+                <h2 id="content-modal-title">Add Content</h2>
+            </div>
+            <form id="content-form" onsubmit="handleContentSubmit(event)">
+                <div id="content-form-fields">
+                    <!-- Form fields will be generated dynamically -->
+                </div>
+                <button type="submit" class="btn">Save</button>
+                <div id="content-error" class="error-message" style="display: none;"></div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>        
+</body>
+</html>
